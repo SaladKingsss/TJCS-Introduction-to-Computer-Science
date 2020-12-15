@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jqgg-style.css') }}">
+    <title>景区公告</title>
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+    </script>
+
+</head>
+<body>
+    <div class="container">
+		<!-- container -->
+		<div class="header">
+            <!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+            <div id="top-nav">
+                <ul>
+                    <li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+                    <li class="top1"><a href="history.html">景点
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                    <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                    <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                    <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                    <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                    <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                    <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                    <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+                                </ul>
+                        </div>
+                        </a></li>
+                    <li><a href="accomdation.html">交通路线
+                    </a></li>
+                        
+                    <li><a href="food.html">热门活动
+                    </a></li>
+                    <li><a href="#news" class="scroll">景区公告
+                    </a></li>
+                    <li><a href="contact.html">联系我们
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>	
+    <div class="info_back">
+        <img src="{{ url_for('static', filename='pic/jqgg/back.jpg') }}" class="board_gg_1">
+    </div>
+    <div class = "info_gg3"> 
+        <h1 id = "title_1_1">1.南京路步行街IP全球征集</h1>
+        <div class = "board_gg1">
+            <a href="https://www.sohu.com/a/428804804_282265">
+            <img src="{{ url_for('static', filename='pic/jqgg/njl1.jpg') }}"  class = "board_gg"/>
+            </a>
+        </div>
+        <div  id ="para1">
+            <h3>征集内容：标识（Logo）设计和吉祥物设计</h3>
+            <h3>征集时间：2020年10月30日起，2020年12月28日止</h3>
+            <h3>征集对象：团队和个人均可</h3>
+            <h3> 投稿邮箱：ipzj@shnanjingroad.com</h3>
+        </div>        
+    </div>
+    <div class = "info_gg2"> 
+        <h1 id = "title_1_1">2.追寻潮流之光—“追光圣诞季”</h1>
+        <div class = "board_gg1">
+            <a href="https://web.shobserver.com/news/detail?id=311447">
+            <img src="{{ url_for('static', filename='pic/jqgg/njl2.jpg') }}" class = "board_gg"/>
+            </a>
+        </div>
+        <div  id ="para2">
+            <h3>活动地点：上海世茂广场拾光酒店（新店）</h3>
+            <h3>活动时间：2020年12月起，2021年2月止</h3>
+                 
+        </div>        
+    </div>
+
+    <div class = "info_gg1"> 
+        <h1 id = "title_1_1">3. 《武康路》系列讲座：有故事的路，说也说不完</h1>
+        <div class = "board_gg1">
+            <a href="https://www.sohu.com/a/210726434_768340?qq-pf-to=pcqq.c2c">
+          <img src="{{ url_for('static', filename='pic/jqgg/wkl.jpg') }}"  class = "board_gg"/>
+          </a>
+        </div>
+        <div  id = "para1">
+            <h3>活动类型：文化讲座</h3> 
+            <h3>活动嘉宾：周立民</h3>
+            <h3>活动时间：12月16日（周六）19:00-20:30</h3>    
+            <h3>活动地点：上海市徐汇区淮海中路1834号-1大隐书局（武康大楼店）</h3>
+            <h3>活动费用：免费</h3>   
+        </div>        
+    </div>
+
+    <div class = "info_gg"> 
+        <div id="next_s">
+            <h3>不定期更新</a>
+        </div>        
+        
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqgg-main.js') }}"></script>
+    <script>
+        let top1 = document.querySelector(".nav1");
+        let top_block1 = document.querySelector(".top_block1");
+        let top_block2 = document.querySelector(".top_block2");
+        let top_block3 = document.querySelector(".top_block3");
+        let top_block4 = document.querySelector(".top_block4");
+        let top_block5 = document.querySelector(".top_block5");
+        let top_block6 = document.querySelector(".top_block6");
+        top_block1.onmouseover = function(){
+            let block = document.createElement("div");
+            block.setAttribute("class","top1_style");
+            top_block1.appendChild(block);
+            timer = setInterval(function(){
+                block.style.height = "300px";
+            },0)
+            top_block1.onmouseout = function(){
+            top_block1.removeChild(block);
+        }
+        };
+    </script>
+
+</body>
+</html>

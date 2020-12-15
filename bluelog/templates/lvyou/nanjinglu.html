@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nanjinglu-style.css') }}">
+    <title>南京路</title><!--网站名-->
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+</script>
+
+</head>
+<body>
+    <div class="container">
+		<div class="header">
+			<!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+			<div id="top-nav">
+				<ul>
+					<li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+					<li class="top1"><a href="history.html">景点
+							<div class="submenu">
+								<ul>
+									<li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+									<li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+									<li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+									<li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+									<li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+									<li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+									<li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+									<li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+								</ul>
+						</div>
+						</a></li>
+					<li><a href="{{ url_for('.accomdation') }}">交通路线
+						<div class="submenu1">
+							<ul>
+								<li><a href="">路线1</a></li>
+								<li><a href="">路线2</a></li>
+								<li><a href="">路线3</a></li>
+							</ul>
+						</div>
+					</a></li>
+						
+					<li><a href="food.html">热门活动
+						<div class="submenu1">
+							<ul>
+								<li><a href="">活动1</a></li>
+								<li><a href="">活动2</a></li>
+								<li><a href="">活动3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="#news" class="scroll">景区公告
+						<div class="submenu1">
+							<ul>
+								<li><a href="">公告1</a></li>
+								<li><a href="">公告2</a></li>
+								<li><a href="">公告3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="contact.html">联系我们
+						<div class="submenu1">
+							<ul>
+								<li><a href="">方式1</a></li>
+								<li><a href="">方式2</a></li>
+								<li><a href="">方式3</a></li>
+							</ul>
+						</div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+    <div class = "info1"> 
+        <div class = "board_nj1">
+            <img src = "{{ url_for('static', filename='pic/nanjinglu/board_nj.jpg') }}" alt = "南京路" class = "board_nj"/>
+        </div>
+        <div  id = "font_nj">
+            <h3>旧有“十里洋场”之称的南京路是是上海市最著名的商业街，同时也是最富盛名的旅游景点之一。东起外滩，西至静安寺与延安西路交汇，全长5.5公里，两侧云集约600多家商店。来这里购物、品尝美食、旅游的人群熙熙攘攘，络绎不绝。</h3>            
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">1. 南京路步行街</h1>
+        <div class = "board_nj1">
+            <img src = "{{ url_for('static', filename='pic/nanjinglu/njr2.jpg') }}" class = "board_nj"/>
+        </div>
+        <div  id = "font_nj" style = "font-size:20px;">
+            <h3>南京路步行街采用不对称的布置形式，以4.2米宽的“金带”为主线，贯穿于整条步行街中，“金带”上集中布置城市公共设施，
+                如坐椅、购物亭、问讯亭、广告牌、雕塑小品、路灯、废物箱、电话亭等，并设有34个造型各异的花坛。。</h3>
+            <h3>作为上海开埠后形成的第一条知名商业街，南京路也是上海近现代商业的发祥地。早在十九世纪五、六十年代南京路已有"进口商品的橱窗"之称。
+                二十世纪二、三十年代，随着"四大环球百货"的相继建成开业,南京路更以其繁荣繁华而享誉中外。</h3>
+            <h3>新建成的南京路步行街不仅集"购物、旅游、休闲、商务、展示"等五大功能于一体，还具有"万国商品博览会、繁荣繁华不夜城、购物天堂欢乐游、两个文明大窗口"的四大特点，
+                并集聚了数十个中华老字号旗舰店，享有"中华商业第一街"的美誉。</h3>                    
+            </h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_1">2. 上海市第一百货商店</h1>
+        <div class = "board_nj2">
+            <img src = "{{ url_for('static', filename='pic/nanjinglu/dybh.jpg') }}" class = "board_nj"/>
+        </div>
+        <div  id = "para_2">
+            <h3>上海市第一百货商店(SHANGHAI NO.1 DEPARTMENT STORE)也被称为中百一店，第一百货，位于上海市黄浦区南京东路，西藏中路东北角。</h3>
+            <h3>地处“中华商业第一街”南京路步行街路口的一百老楼，开业于1936年，其前身是著名四大百货公司之一的大新公司。
+                如今，这幢近代优秀保护建筑，以近15万平方米的总面积，全新规划了大戏院、梧桐、弄堂、夜上海、都市前沿、冬季花园、探索发现、慢生活的八大主题区，经典的上海格调将与时代潮流相互融合。</h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">3. 和平饭店</h1>
+        <div class = "board_nj1_31">
+            <img src = "{{ url_for('static', filename='pic/nanjinglu/hpfd.jpg') }}" class = "board_nj"/>
+        </div>
+        <div class = "board_nj1_32">
+            <img src = "{{ url_for('static', filename='pic/nanjinglu/hpfd2.jpg') }}" class = "board_nj"/>
+        </div>
+        <div>
+            <h3 id = "para_31">
+                和平饭店是上海市地标性建筑，位于上海黄浦区南京东路20号，是上海近代建筑史上第一幢现代派建筑，
+                拥有最具特色的九国式特色套房及众多别具特色的餐厅、宴会厅、多功能厅、酒吧、屋顶观光花园等。
+            </h3>
+            <h3 id = "para_32">
+                饭店于1929年落成以后，名噪上海，主要接待金融界，商贸界和各国社会名流。三四十年代，鲁迅、宋庆龄曾来饭店会见外国友人卓别林、萧伯纳等。
+                解放后，饭店于1956年重新开业，起名和平饭店。和平饭店对客房、餐厅等进行了更新改造，焕然一新，而建筑风格仍保持了当年的面貌。
+            </h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_1">4. 周边美食</h1>
+        <div class = "main_div">
+            <div class = "arrows">
+                <span title="1" class="arrow"></span>
+                <span title="0" class="arrow" style="float: right">></span>
+            </div>
+    
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/nanjinglu/nj_foodmap1.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/nanjinglu/nj_food1.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/nanjinglu/nj_food1.1.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/nanjinglu/nj_food2.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/nanjinglu/nj_food2.1.jpg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/nanjinglu-main.js') }}">
+        </script>
+        <div  id = "para_2">
+            <h3>南京路步行街的美食真可谓天南海北包罗万象，譬如：老半斋的刀鱼面；扬州饭店的煮干丝、蟹粉狮子头、水晶肴肉；新雅粤菜馆的新雅虾仁、葱油鸡、烟熏鲳鱼、蚝油牛肉；
+                燕云楼的片皮鸭、醋椒鳜鱼；泰康的鲜肉月饼、蝴蝶酥；真老大房的熏鱼和鲜肉月饼；沈大成的各式糯米糕点；三阳和邵万生的南北货，等等数不胜数。</h3>
+        </div>              
+    </div>
+    <div class = "info2"> 
+        <div class = "board_nj1">
+            <img src = "{{ url_for('static', filename='pic/nanjinglu/last.jpg') }}" class = "board_nj"/>
+        </div>
+        <div  id = "font_nj">
+            <h3>上海这座城市迷人之处，就是19世纪中叶后，中西文化在这里相遇、碰撞、竞争并互相学习、吸收，最后水乳交融。这也是南京路最让人心动的魅力。</h3>
+        </div>        
+        <div id = "font_nj">
+            <a id="next_s" href="{{ url_for('.laonongtang') }}">开启下一站之旅吧！</a>
+        </div>        
+        
+    </div>
+<script>
+        let top1 = document.querySelector(".nav1");
+        let top_block1 = document.querySelector(".top_block1");
+        let top_block2 = document.querySelector(".top_block2");
+        let top_block3 = document.querySelector(".top_block3");
+        let top_block4 = document.querySelector(".top_block4");
+        let top_block5 = document.querySelector(".top_block5");
+        let top_block6 = document.querySelector(".top_block6");
+        top_block1.onmouseover = function(){
+            let block = document.createElement("div");
+            block.setAttribute("class","top1_style");
+            top_block1.appendChild(block);
+            timer = setInterval(function(){
+                block.style.height = "300px";
+            },0)
+            top_block1.onmouseout = function(){
+            top_block1.removeChild(block);
+        }
+        };
+</script>
+
+</body>
+</html>

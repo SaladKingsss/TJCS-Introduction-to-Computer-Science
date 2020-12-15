@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tianailu-style.css') }}">
+    <title>甜爱路</title>
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+    </script>
+
+</head>
+<body>
+    <div class="container">
+		<!-- container -->
+		<div class="header">
+            <!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+            <div id="top-nav">
+                <ul>
+                    <li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+                    <li class="top1"><a href="history.html">景点
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                    <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                    <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                    <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                    <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                    <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                    <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                    <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+                                </ul>
+                        </div>
+                        </a></li>
+                    <li><a href="accomdation.html">交通路线
+                    </a></li>
+                        
+                    <li><a href="food.html">热门活动
+                    </a></li>
+                    <li><a href="#news" class="scroll">景区公告
+                    </a></li>
+                    <li><a href="contact.html">联系我们
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>	
+    <div class = "info_ta3"> 
+        <div class = "board_ta1">
+            <img src="{{ url_for('static', filename='pic/tianailu/jiedao.jpg') }}" class = "board_ta_left"/>
+        </div>
+        <div  id = "font_ta" style = "font-size:20px;">
+            <h3>干净整洁，清新脱俗，很多人只知道上海的繁华，上海的高楼大厦，上海的金融中心，但很少人知道她还有这么温情的一面。据说这条路长520米，不知真假，或许，这是每一个憧憬浪漫爱情的人，对甜爱路的心理测算距离吧。</h3>
+            <h3>独特的墙花点缀，增添了几分温馨，街道旁的爱情雕塑，增添了几分浪漫。</h3>
+            <h3>爱情，这个千古传诵的话题，至今还被世人所津津乐道，爱情为何物，没有人能具体出一个标准，它让人笑，惹人哭，它调动了一个人所有的情愫，它让你为一个人而不顾一切，这也许就是爱情吧。也许，一个意外的转角，这就是甜爱路的魅力。</h3>
+            <h3>你就能发现爱情的元素。</h3>                    
+        </div>        
+    </div>
+    <div class = "info_ta1"> 
+        <h1 id = "title_1_1">1. 历史传说</h1>
+        <div class = "board_ta0">
+          <img src="{{ url_for('static', filename='pic/tianailu/lishi.jpg') }}"  class = "board_ta_right"/>
+        </div>
+        <div  id = "font_ta1">
+            <h3>甜爱路南起四川北路，北至甜爱支路，长约520米，于1920年筑，名公园靶子场路，因与千爱里相通，又称“千爱里”，抗战胜利后，起谐音改称“甜爱路”。</h3>        
+            <h3>甜爱路也不是空穴来风，背后还有个美丽的传说支撑着，相传这里曾有个名叫田爱的姑娘和一个叫祥德的放牛小伙子，从小就在一起，两小无猜，日久生情，最终成就了一段爱情佳话。从此，上海就有了甜爱和祥德这两条幽静小路，这两条路相依相偎，如一对甜蜜爱人一般。</h3> 
+        </div>        
+    </div>
+    <div class = "info_ta2"> 
+        <h1 id = "title_1_1">2.爱情墙</h1>
+        <div class = "main_div">
+            <div class = "arrows">
+                <span title="1" class="arrow"><</span>
+                <span title="0" class="arrow" style="float: right">></span>
+            </div>
+    
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/tianailu/aqq4.jpg') }}" ></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/tianailu/aqq1.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/tianailu/aqq2.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/tianailu/aqq3.jpg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/tianailu-main.js') }}"></script>
+        <div  id = "para_2">
+            <h3>温馨，甜蜜，这条路以爱之名，28首中外情诗，试图阐述爱情的真谛。</h3>
+            <h3>牵手的走过恋人时常诵读墙上的爱情佳句</h3>
+            <h3>当你抬头望星星，</h3>
+            <h3>我的爱人！</h3>    
+            <h3>我愿成为天空，</h3>
+            <h3>可以用千万只眼睛</h3>
+            <h3>好好将你打量。</h3>
+            <h3>这就是道路一边是由28首中外著名爱情诗篇组成的“爱情墙”。</h3>
+        </div>        
+    </div>
+
+    <div class = "info_ta1"> 
+        <h1 id = "title_1_1">3. 爱情邮筒</h1>
+        <div class = "board_ta3_1">
+            <img src="{{ url_for('static', filename='pic/tianailu/yt2.jpg') }}" class = "board_ta_left"/>
+        </div>
+        <div class = "board_ta3_2">
+            <img src="{{ url_for('static', filename='pic/tianailu/yt.jpg') }}" class = "board_ta32/">
+        </div>
+    
+        <div>
+            <h3 id = "para_3_1">
+                我们知道有寄给未来的明信片，而上海的甜爱路，也有寄往爱情的邮筒。这条路的路口设一只特别的爱情邮筒，从这座爱心邮筒投出的每一封信函，都将被盖上一枚英文爱的邮戳（要到溧阳路1338号四川北路街道门卫室盖，在鲁迅公园邮政支局，可以盖到甜爱路纪念邮戳，但仅限于特殊纪念日）。每一封邮件，都有爱的印记，从上海最浪漫马路寄出的邮件，会不会有不一样的感觉。
+            </h3>
+        </div>        
+    </div>
+    <div class = "info_ta2"> 
+        <h1 id = "title_1_1">4. 千爱里</h1>
+        <div class = "board_ta0">
+          <img src="{{ url_for('static', filename='pic/tianailu/qal.jpg') }}"  class = "board_ta_right"/>
+        </div>
+        <div  id = "font_ta1">
+            <h3>千爱里，这是在甜爱路和山阴路之间的小弄堂。如果光靠
+                自己能找到千爱里，要找到这有着甜蜜名字的地方恐怕颇费周折。山阴路2弄，连接着甜爱路和山阴路，暗红色的砖墙，葱郁的爬山虎。千爱里有这么好听的名字，缘于它隔壁那条远近闻名的浪漫马路“甜爱路”。当时在此居住的均为日侨，3号是幢坐北朝南的新式里弄花园洋房，它的主人就是内山书店的老板内山完造，他在这里住了11年，据说当年鲁迅先生和夫人也常来此散步。</h3>        
+        </div>        
+    </div>
+
+    <div class = "info_ta1"> 
+        <div class = "board_ta2">
+            <img src="{{ url_for('static', filename='pic/tianailu/end.jpg') }}" class = "board_ta_left"/>
+        </div>
+        <div  id = "para_end">
+            <h3>和煦温暖的阳光洒满街头，最幸福的时光，是坐在你的自行车后座上，搂着你的腰，紧贴着你的背，你会听到我扑通扑通的心跳，那是安全感的声音。文艺的街角，吸引了众人的目光，立体悬浮的单车彰显独特的设计，浪漫的马路少不了浪漫的咖啡厅，久久凝视，仿佛忘记了自己身处何方，忘记了自己在这个熙攘喧闹的大都市，一阵阵清新甜蜜的微风拂面而来，栖于心间。</h3>
+                
+            <h3>陪伴是最长情的告白，和自己相爱的人来这条甜蜜的马路走一遭，或许会收获别样的感动。</h3>
+
+            <h3>这就是上海甜爱路的故事，如果有机会到上海，不妨来这条最浪漫的路走走，或许会邂逅属于你的那份浪漫爱情。</h3>
+        </div>        
+        <div id = "next_s">
+            <a href="next_station">开启下一站之旅吧！</a>
+        </div>        
+        
+    </div>
+    
+    <script>
+        let top1 = document.querySelector(".nav1");
+        let top_block1 = document.querySelector(".top_block1");
+        let top_block2 = document.querySelector(".top_block2");
+        let top_block3 = document.querySelector(".top_block3");
+        let top_block4 = document.querySelector(".top_block4");
+        let top_block5 = document.querySelector(".top_block5");
+        let top_block6 = document.querySelector(".top_block6");
+        top_block1.onmouseover = function(){
+            let block = document.createElement("div");
+            block.setAttribute("class","top1_style");
+            top_block1.appendChild(block);
+            timer = setInterval(function(){
+                block.style.height = "300px";
+            },0)
+            top_block1.onmouseout = function(){
+            top_block1.removeChild(block);
+        }
+        };
+        
+    </script>
+ 
+</body>
+</html>

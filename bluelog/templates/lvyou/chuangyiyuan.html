@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{{ url_for('static', filename='css/chuangyiyuan-style.css') }}">
+    <title>M50创意园</title>
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+</script>
+
+</head>
+<body>
+    <!-- container -->
+    <div class="container">
+		<div class="header">
+			<div class="logo">
+				<a href="index.html">M50创意园</a>
+			</div>
+			<div class="logo">
+				<div class="login_regist">
+					<a href="javascript:login();" class="login">你好,请登录</a></a>
+					&nbsp;&nbsp;
+					<a href="javascript:regist();" class="regist">免费注册</a>
+				</div>
+				
+			</div>
+			<div id="top-nav">
+				<ul>
+					<li><a href="index.html" class="active">首页</a></li>
+					<li class="top1"><a href="history.html">景点
+							<div class="submenu">
+								<ul>
+                                    <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                    <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                    <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                    <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                    <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                    <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                    <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                    <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>								
+                                </ul>
+						</div>
+						</a></li>
+					<li><a href="accomdation.html">交通路线
+						<div class="submenu1">
+							<ul>
+								<li><a href="">路线1</a></li>
+								<li><a href="">路线2</a></li>
+								<li><a href="">路线3</a></li>
+							</ul>
+						</div>
+					</a></li>
+						
+					<li><a href="food.html">热门活动
+						<div class="submenu1">
+							<ul>
+								<li><a href="">活动1</a></li>
+								<li><a href="">活动2</a></li>
+								<li><a href="">活动3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="#news" class="scroll">景区公告
+						<div class="submenu1">
+							<ul>
+								<li><a href="">公告1</a></li>
+								<li><a href="">公告2</a></li>
+								<li><a href="">公告3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="contact.html">联系我们
+						<div class="submenu1">
+							<ul>
+								<li><a href="">方式1</a></li>
+								<li><a href="">方式2</a></li>
+								<li><a href="">方式3</a></li>
+							</ul>
+						</div>
+					</a></li>
+				</ul>
+			</div>
+    </div>
+    <div class = "info1"> 
+        <div class = "board_wk1">
+            <img src="{{ url_for('static', filename='pic/chuangyiyuan/M50_board.jpg') }}" class = "board_wk"/>
+        </div>
+        <div  id = "font_wk">
+            <h3>M50园区位于莫干山路50号，她的前身为上海春明粗纺厂，于2000年起开始转型为艺术创意园区。园区里可以常常碰到艺术创作者的涂鸦墙，是潮人们逛吃拍照的必打卡之地。画廊、咖啡店、设计工作室……如今，在这里参观游玩是轻松的，可以用闲逛来形容。用自己的目光去看看，仅此而已。走得累了，你可以在书吧里歇歇脚，点一杯茶饮，浏览一下众多的艺术书籍，就可以打发一个下午。</h3>            
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">1. 涂鸦街景</h1>
+        <div class = "main_div">
+            <div class = "arrows">
+                <span title="1" class="arrow"><</span>
+                <span title="0" class="arrow" style="float: right">></span>
+            </div>
+    
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/chuangyiyuan/tuya1.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/chuangyiyuan/tuya2.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/chuangyiyuan/tuya3.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/chuangyiyuan/tuya4.jpg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/chuangyiyuan-main.js') }}"></script>
+        <div  id = "para_21">
+            <h3>从莫干山路昌化路口进入，有一条满是涂鸦墙的马路，墙上的涂鸦时常被新作品覆盖，时不时还会看到有人手持喷瓶在那涂鸦。沿着小路走到尽头就是M50的入口了，气氛也随之变得轻松惬意起来。园区的改造基本按照“以旧修旧”的原则，保留着之前的工业风格，又融入当代艺术设计，充满艺术气息。</h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_1">2. J·COFFEE</h1>
+        <div class = "board_wk1">
+            <img src="{{ url_for('static', filename='pic/chuangyiyuan/coffee.jpeg') }}" class = "board_wk"/>
+        </div>
+        <div  id = "font_wk" style = "font-size:20px;">
+            <h3>你有没有发觉，这城市太快了？从窗外望出去，或是看看四周，人们总是低头奔走着。在匆忙之中一家由工厂改造、文艺气息十足、色调温暖厚重、混搭着水墨色彩的国画风、狂野温馨又别致文雅J·COFFEE在上海诞生了。</h3>
+            <h3>特别推荐巧克力黑松露蛋糕。巧克力浓郁的甜蜜感完全融入每一寸蛋糕里，让你有欲罢不能的感觉。意式肉酱面、原味华夫都是值得一尝的经典美食。相信在这里你可以感受到时光的静止，与简单快乐共存。</h3>
+            </h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">3. 散子艺术</h1>
+        <h1 id = "title_1_2">4. 小美术馆</h1>
+        <div class = "board_wk1_31">
+            <img src="{{ url_for('static', filename='pic/chuangyiyuan/museum1.jpg') }}" class = "board_wk"/>
+        </div>
+        <div class = "board_wk1_32">
+            <img src="{{ url_for('static', filename='pic/chuangyiyuan/museum2.jpg') }}" class = "board_wk"/>
+        </div>
+        <div>
+            <h3 id = "para_31">
+                在M50里，有许许多多令人惊赞的画廊，在楼间深处，就有这样一家，从此处展挂的画中，你可以领悟出老子道家文化思想的内涵，其作品雅俗共赏，具有较强的视觉冲击力和艺术感染力。这里就是散子艺术。            </h3>
+            <h3 id = "para_32">
+                艺术是很生活化的，它不是供少数人欣赏的，它也不是遥不可及的。小美术馆朴素的艺术想法是“艺术生活化，生活艺术化”。把艺术融入生活。            </h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_1">5. 东京潘画廊</h1>
+        <h1 id = "title_1_2">6. 宽庭</h1>
+        <div class = "board_wk1_41">
+            <img src = "{{ url_for('static', filename='pic/chuangyiyuan/toyoto.jpg') }}" class = "board_wk_2"/>
+        </div>
+        <div class = "board_wk1_32">
+            <img src="{{ url_for('static', filename='pic/chuangyiyuan/kuangt.jpg') }}" class = "board_wk_2"/>
+        </div>
+        <div  id = "para_41">
+            <h3>东京潘画廊由台湾设计师登琨艳于1998年设计，被赞为“上海的塞纳河左岸”，先后走出过很多知名的当代艺术家，不定期举办艺术家展览、小型音乐会、实验话剧、文化讲座等活动。旧厂房和仓库里拥有天然的巨大空间，而这些老厂房就是运生新兴设计力量的重要载体。眼前的ANTENNA SPACE（天线空间）就是一家画廊，关注于当代青年艺术的创作，这里定期会组织举办展览</h3>
+        </div>        
+        <div  id = "para_32"> <!-- 这里使用的是第三段左边的格式 -->
+            <h3>眼前这幢十五六米高的建筑原是整个厂区的锅炉房，曾为整个厂区供应热水，现在是一家名叫“宽庭”的家居会馆，建筑改造出自台湾设计师陈瑞宪之手，他将原建筑拆下的红砖捣成细碎，糅合涂料涂抹建筑外墙，呈现出新旧融合的时间感。</h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <div class = "board_wk1">
+            <img src="{{ url_for('static', filename='pic/chuangyiyuan/background.jpg') }}" class = "board_wk"/>
+        </div>
+        <div  id = "font_wk">
+            <h3>莫干山路50号，据说它还有一个别称——“上海的塞纳河左岸”，这里有越多艺术家的工作室，画廊，和艺术中心等。这里身处苏州河的背街道，在莫干山路的尽头，给人得感觉是静谧又有那么点冷清，有许多涂鸦的外墙，很适合拿着单反去拍照，有些建筑，自然的就成了一副画，艺术氛围浓厚。快背上行囊出发吧</h3>
+        </div>        
+        <div id = "font_wk">
+            <a id="next_s" href="{{url_for('.waitan')}}">开启下一站之旅吧！</a>
+        </div>        
+        
+    </div>
+
+</body>
+</html>

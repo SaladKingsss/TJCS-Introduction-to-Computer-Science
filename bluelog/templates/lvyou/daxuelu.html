@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/daxuelu-style.css') }}">
+    <title>大学路</title>
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+</script>
+
+</head>
+<body>
+    <div class="container">
+		<div class="header">
+			<!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+			<div id="top-nav">
+				<ul>
+					<li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+					<li class="top1"><a href="history.html">景点
+							<div class="submenu">
+								<ul>
+									<li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+									<li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+									<li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+									<li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+									<li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+									<li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+									<li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+									<li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+								</ul>
+						</div>
+						</a></li>
+					<li><a href="{{ url_for('.accomdation') }}">交通路线
+						<div class="submenu1">
+							<ul>
+								<li><a href="">路线1</a></li>
+								<li><a href="">路线2</a></li>
+								<li><a href="">路线3</a></li>
+							</ul>
+						</div>
+					</a></li>
+						
+					<li><a href="food.html">热门活动
+						<div class="submenu1">
+							<ul>
+								<li><a href="">活动1</a></li>
+								<li><a href="">活动2</a></li>
+								<li><a href="">活动3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="#news" class="scroll">景区公告
+						<div class="submenu1">
+							<ul>
+								<li><a href="">公告1</a></li>
+								<li><a href="">公告2</a></li>
+								<li><a href="">公告3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="contact.html">联系我们
+						<div class="submenu1">
+							<ul>
+								<li><a href="">方式1</a></li>
+								<li><a href="">方式2</a></li>
+								<li><a href="">方式3</a></li>
+							</ul>
+						</div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+    <div class = "info1"> 
+        <div class = "board_dx1">
+            <img src = "{{ url_for('static', filename='pic/daxuelu/board_dx.jpg') }}" alt = "大学路" class = "board_dx"/>
+        </div>
+        <div  id = "font_dx">
+            <h3>上海大学路长约700米，起于智星路，止于锦建路，一头连着复旦大学、上海财经大学，另一头连着创智天地广场和江湾体育场，是一条不长的小马路。
+                大学路流露出浓浓的时尚风情的林荫道，已经成为具有丰富业态、兼具人文气息 ，一份别样的惬意与清新的休闲场所。</h3>            
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">1.TWIST OF FATE </h1>
+        <div class = "board_dx1">
+            <img src = "{{ url_for('static', filename='pic/daxuelu/dx_build1.jpeg') }}" class = "board_dx"/>
+        </div>
+        <div  id = "font_dx" style = "font-size:20px;">
+            <h3>从复旦大学邯郸校区东门出来，步行不到500米的距离就到了大学路。总长不到1000米，两侧丰富的手绘墙体和特色店铺，使这条街道极具美感。</h3>
+            <h3>由意大利当代知名艺术家Millo在杨浦区大学路上绘制的这个巨型涂鸦墙，是全亚洲最高墙绘：小男孩稳稳托起小女孩，帮她看到高处荷叶上的小红龙。
+                极简黑白线条的勾勒，简单的色彩点缀，一面普通居民楼的墙壁就这样变成一幅天马行空般的妙趣游乐场画像。</h3>                    
+            </h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_1">2. 墙绘</h1>
+        <div class = "board_dx2">
+            <img src = "{{ url_for('static', filename='pic/daxuelu/dx_build2_1.jpeg') }}" class = "board_dx"/>
+        </div>
+        <div  id = "para_21">
+            <h3>整条大学路都充满了艺术灵感与纯手绘的描述，在快节奏的魔都，去大学路走一趟，都会不自觉地慢下来。</h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">3. 大学路店面</h1>
+        
+        <div class = "main_div">
+            <div class = "arrows">
+                <span title="1" class="arrow"></span>
+                <span title="0" class="arrow" style="float: right">></span>
+            </div>
+    
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/daxuelu/dx_build3_1.jpeg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/daxuelu/dx_build3_2.jpeg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/daxuelu/dx_build3_3.jpeg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/daxuelu/dx_build3_4.jpeg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/daxuelu-main.js') }}"></script>
+        <div>
+            <h3 id = "para_21">
+            在商业品牌和街区形象方面，大学路孕育着独属于这里的掌柜和品牌，没有千街一面的苦恼。
+            这里驻扎的不是单纯的“网红”或“小资”的品牌，而是由独特的「人情味商业」和「掌柜式经营」形成商业魅力。
+            </h3>
+            
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_2">4. 主题市集</h1>
+        <div class = "board_dx1_41">
+            <img src = "{{ url_for('static', filename='pic/daxuelu/dx_build4_1.jpg') }}" class = "board_dx_2"/>
+        </div>
+        <div class = "board_dx1_32">
+            <img src = "{{ url_for('static', filename='pic/daxuelu/dx_build4_2.jpg') }}" class = "board_dx_2"/>
+        </div>
+        <div  id = "para_41">
+            <h3>这里经常举办各种类型的主题市集，吸引了很多亲子家庭前来参观体验。
+                来自同济大学的团队在现场做起了如何在“2分钟内制作发光魔杖”的小实验，这一光影体验不仅吸引着小孩子前来围观，连家长们也跃跃欲试。
+            </h3>
+        </div>        
+        <div  id = "para_32"> <!-- 这里使用的是第三段左边的格式 -->
+            <h3>大学路智星路交叉口广场举办的创客奇妙夜市，是一次大脑与科技相遇碰撞的创意市集，也是一个科技与发明的游乐场。摊位缤纷多彩，各有创意，别具一格。</h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <div class = "board_dx1">
+            <img src = "{{ url_for('static', filename='pic/daxuelu/dx_build5.jpg') }}" class = "board_dx"/>
+        </div>
+        <div  id = "font_dx">
+            <h3>不同于传统上海那种老租界的美丽街道，大学路是年轻、充满惊喜，十足有趣的现代“潮”街。其混合开放的特性，成为上海街道中独具魅力的另类代表。</h3>
+        </div>        
+        <div id = "font_dx">
+            <a id="next_s" href="{{ url_for('.tianailu') }}">开启下一站之旅吧！</a>
+        </div>        
+        
+    </div>
+<script>
+        let top1 = document.querySelector(".nav1");
+        let top_block1 = document.querySelector(".top_block1");
+        let top_block2 = document.querySelector(".top_block2");
+        let top_block3 = document.querySelector(".top_block3");
+        let top_block4 = document.querySelector(".top_block4");
+        let top_block5 = document.querySelector(".top_block5");
+        let top_block6 = document.querySelector(".top_block6");
+        top_block1.onmouseover = function(){
+            let block = document.createElement("div");
+            block.setAttribute("class","top1_style");
+            top_block1.appendChild(block);
+            timer = setInterval(function(){
+                block.style.height = "300px";
+            },0)
+            top_block1.onmouseout = function(){
+            top_block1.removeChild(block);
+        }
+        };
+</script>
+
+</body>
+</html>

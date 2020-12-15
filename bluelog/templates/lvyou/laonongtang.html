@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/laonongtang-style.css') }}">
+    <title>田子坊</title>
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+    </script>
+
+</head>
+<body>
+    <div class="container">
+		<!-- container -->
+		<div class="header">
+            <!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+            <div id="top-nav">
+                <ul>
+                    <li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+                    <li class="top1"><a href="history.html">景点
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                    <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                    <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                    <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                    <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                    <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                    <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                    <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+                                </ul>
+                        </div>
+                        </a></li>
+                    <li><a href="accomdation.html">交通路线
+                    </a></li>
+                        
+                    <li><a href="food.html">热门活动
+                    </a></li>
+                    <li><a href="#news" class="scroll">景区公告
+                    </a></li>
+                    <li><a href="contact.html">联系我们
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>	
+    <div class = "info_tzf3"> 
+        <div class = "board_tzf1">
+            <img src="{{ url_for('static', filename='pic/laonongtang/menpai.jpg') }}" class = "board_tzf"/>
+        </div>
+        <div  id = "font_tzf" style = "font-size:20px;">
+            <h3>“田子坊”其名其实是画家黄永玉几年前给这旧弄堂起的雅号。据史载，“田子方”是中国古代的画家，取其谐音，用意自不言而喻。使得曾经的街道小厂，巷子废弃的仓库，石库门里弄的平常人家，抹上了“苏荷”（SOHO）的色彩、多了艺术气息熏染。</h3>
+            <h3>田子坊是里弄民居味道，弄堂里除了创意店铺和画廊、摄影展，最多的就是各种各样的咖啡馆。在闲散的下午，就着弄堂里的习习凉风，明媚的阳光铺在地上，空中满是慵懒的咖啡香味，真个是大有“偷得浮生半日闲”的意境。</h3>
+                 
+        </div>        
+    </div>
+    <div class = "info_tzf2"> 
+        <h1 id = "title_1_1">1.陈逸飞工作室</h1>
+        <div class = "main_div_tzf">
+            <div class = "arrows">
+                <span title="1" class="arrow"><</span>
+                <span title="0" class="arrow" style="float: right">></span>
+            </div>
+    
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/laonongtang/cyf1.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/laonongtang/cyf2.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/laonongtang/cyf3.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/laonongtang/cyf4.jpg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/laonongtang-main.js') }}"></script>
+        <div  id = "para_1">
+               <h3>走进田子坊里，不经意间可能会走过这栋两层楼的木质老房子，这里就是已故艺术家陈逸飞的工作室。旧址免费向公众开放，底层陈列着逸飞先生生前的一些画作和使用过的颜料、调色板等，二楼是先生曾居住的地方，可以远观古旧的家具、沙发和椅子。整个工作室比较寂静昏暗。</h3>
+               <h3>室内最引人瞩目的是少女雕像，还有非遗传承的师傅在现场制作工艺品。</h3>
+        </div>        
+    </div>  
+    <div class = "info_tzf1"> 
+        <h1 id = "title_1_1">2. 巴塞艺术中心</h1>
+        <div class = "board_tzf0">
+          <img src="{{ url_for('static', filename='pic/laonongtang/basai.jpg') }}"  class = "board_tzf"/>
+        </div>
+        <div  id = "font_tzf1">
+            <h3>巴塞艺术中心位于”田子坊”泰康路200号，这个当年由画家们在老厂房内开创的艺术街和著名画家陈逸飞工作室，实现了传统与现代、时尚与新潮的和谐嫁接</h3> 
+            <h3>巴塞艺术中心展览空间为700平方米。它的功能包括展览、研究、收藏，学术交流，还为重要藏家设计收藏策略、协助管理藏品。</h3>
+        </div>        
+    </div>
+
+    </div>
+    <div class = "info_tzf2"> 
+        <h1 id = "title_1_1">4. 画家楼</h1>
+        <h1 id="title_1_2">5.任微音画馆</h1>
+        <div  id = "para_3_2">
+            <h3>田子坊画家楼的规模并不大，之前是一家制造钟表塑料配件的街道工厂，五层的老厂房里，其实只有下面的三层每天开启着画家工作室的大门。上面的两层，有时也有些画家入驻，但更多是作为创意设计类的公司办公室。这比起其他城市的大型画家聚集区，在数量级别上并没有什么明显的优势。不过，在大都市的中心位置，在老上海的弄堂里，在有艺术根基的地方，把这些“显赫背景”叠加在一起，足以压过许多时起彼伏的画家村。十年，保持着一种状态，只有进步没有荒废，只有坚守没有张扬，时间本身就可以让田子坊熬出一个属于自己的品牌。</h3>        
+        </div>
+        <div id="para_3_1">
+            <h3>任微音先生是20世纪被长期忽视的最重要的中国画家之一、艺术史核心内容中的一颗遗珠。他独创了自己绘画风格，混合西方的印象主义和中国的传统方法，通过用油稀释他的油画，让画作具有更自由的流动性，并吸收了中国书法的流畅笔法，展现了上世纪六、七十年代上海的市井生活</h3>
+        </div>       
+    </div>
+
+    <div class = "info_tzf1"> 
+        <div class = "board_tzf0">
+            <img src="{{ url_for('static', filename='pic/laonongtang/end.jpg') }}" class = "board_tzf"/>
+        </div>
+        <div  id = "para_end">
+            <h3>如果走累了，你可以找一家咖啡馆坐下来，就着弄堂里的习习凉风，品味一顿美味下午茶。当然这里也有一些时尚新兴的创意餐厅，比如便所欢乐主题餐厅，马桶造型座位、洗手盆造型的桌子，还有酷似“便便”样子的美食都让喜欢猎奇的顾客为之振奋。</h3>
+
+            <h3>入夜时分，这里更是很多夜猫族的时尚聚集地，露天的酒吧坐满了一张张不同肤色的脸孔，虽然不及新天地那么人头攒动，但是也更多了一份清新雅致，伴随着布鲁斯音乐，慢慢享受着夜上海。</h3>
+                
+        </div>        
+        <div id="next_s">
+            <a href="next_station">开启下一站之旅吧！</a>
+        </div>        
+        
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/laonongtang-main.js') }}"></script>
+    <script>
+        let top1 = document.querySelector(".nav1");
+        let top_block1 = document.querySelector(".top_block1");
+        let top_block2 = document.querySelector(".top_block2");
+        let top_block3 = document.querySelector(".top_block3");
+        let top_block4 = document.querySelector(".top_block4");
+        let top_block5 = document.querySelector(".top_block5");
+        let top_block6 = document.querySelector(".top_block6");
+        top_block1.onmouseover = function(){
+            let block = document.createElement("div");
+            block.setAttribute("class","top1_style");
+            top_block1.appendChild(block);
+            timer = setInterval(function(){
+                block.style.height = "300px";
+            },0)
+            top_block1.onmouseout = function(){
+            top_block1.removeChild(block);
+        }
+        };
+    </script>
+
+</body>
+</html>

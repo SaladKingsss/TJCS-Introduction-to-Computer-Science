@@ -1,0 +1,385 @@
+@font-face{
+  font-family: myfont;
+  src: url(../font/杨任东竹石体-Extralight.ttf)
+}
+#layer1{
+  height: 100%;
+  background-color: rgb(247, 242, 234);
+  position: absolute;
+  width: 80%;
+  margin-left:10%;
+}
+  body{
+    background-image: url('../pic/lvyouluxian/background.jpg');
+    background-repeat: repeat;
+    background-color:black;
+    position: relative;
+    height: 3000px;
+  }
+  .container {
+    height:100%;
+    width: 100%;
+    position:relative;
+    min-width: 1080px;
+  }
+  .container .header .logo {
+    float: left;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .container .header .logo a  {
+    color: white;
+    font-size: 5em;
+    font-family: 'Dorsa-Regular', '瘦金体';
+    /* 待定字体 */
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .container .header .logo .login_regist{
+    margin: 0 270px;
+    border: 1px solid #008c8c;
+  }
+  .container .header .logo .login_regist a:hover {
+    color:yellow;
+  }
+  .container .header .logo .login_regist .login {
+    color: white;
+    font-size: 1em;
+    font-family: 'Dorsa-Regular', '瘦金体';
+    /* 待定字体 */
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .container .header .logo .login_regist .regist {
+    color: red;
+    font-size: 1em;
+    font-family: 'Dorsa-Regular', '瘦金体';
+    /* 待定字体 */
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .container .header #top-nav {
+    background:rgba(70, 69, 69, 1);
+    position: fixed;
+    top:-0.5%;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding: 1em 0 1em 0;
+    transition: all 1s;
+    z-index: 9999;
+  }
+  
+  .container .header #top-nav>ul {
+    padding: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  
+  .container .header #top-nav>ul>li {
+    display: inline-block;
+    margin: 0 2em;
+    position: relative;  
+  }
+  
+  .container .header #top-nav>ul>li>div>ul>li{
+    list-style: none;
+  }
+  
+  .container .header #top-nav>ul>li>div>ul{
+    padding: 0px;
+  
+  }
+  .container .header #top-nav>ul>li a {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    margin: 100px 0px;
+    font-weight: 600;
+    font-family: 'Dorsa-Regular';
+    /* 字体待定 */
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .container .header #top-nav>ul>li a:hover {
+    color: #ffcc33;
+  }
+  
+  .container .header #top-nav>ul>li .submenu {
+    text-align: left;
+    line-height: 1.5;
+    width: 100px;
+    height:0px;
+    top:27px;
+    border: 0px solid #ccc;
+    box-sizing: border-box;
+    position: absolute;
+    left:-22px;
+    background:rgba(70, 69, 69, 1);
+    overflow: hidden;
+    transition: all 1s;
+  }
+  
+  .container .header #top-nav>ul>li:hover .submenu {
+    height:290px;
+    border: 2px solid #ccc;
+  }
+  
+  .container .header #top-nav>ul>li:hover .submenu1{
+    display: block;
+    height:110px;
+    border: 2px solid #ccc;
+  }
+  .container .header #top-nav>ul>li .submenu ul li {
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .container .header #top-nav>ul>li .submenu1 {
+    text-align: left;
+    line-height: 1.5;
+    width: 105px;
+    top:27px;
+    height:0px;
+    box-sizing: border-box;
+    position: absolute;
+    border: 0px solid #ccc;
+    background:rgba(70, 69, 69, 1);
+    overflow: hidden;
+    transition: all 1s;
+  }
+  .container .header #top-nav>ul>li .submenu1 ul li {
+    float: none;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .container .header #top-nav>ul>li .submenu1 ul li a{
+    color: rgb(255, 255, 255);
+  }
+  .container .header #top-nav>ul>li .submenu1 ul li a:hover{
+    color: rgb(243, 191, 20);
+  }
+  .container .header #top-nav>ul>li .submenu ul li a{
+    color: rgb(255, 255, 255);
+  }
+  .container .header #top-nav>ul>li .submenu ul li a:hover{
+    color: rgb(243, 191, 20);
+  }
+.content{
+  position: absolute;
+  top:1.6%;
+  height: 100%;
+  width: 100%;
+}
+#container1 {    
+  position: absolute;
+  overflow: hidden;
+  top:14%;
+  left: 8%;
+  width: 1000px;
+  height: 500px;
+  margin: 0;
+  font-family: "微软雅黑";
+  border-style: double;
+  z-index: 999;
+}
+#container2 {    
+  position: absolute;
+  overflow: hidden;
+  top:30%;
+  left: 17%;
+  width: 700px;
+  height: 500px;
+  margin: 0;
+  font-family: "微软雅黑";
+  border-style: double;
+  z-index: 999;
+}
+.info {
+    z-index: 999;
+    width: auto;
+    min-width: 22rem;
+    padding: .75rem 1.25rem;
+    margin-left: 1.25rem;
+    position: absolute;
+    top: 22%;
+    left:10%;
+    background-color: #fff;
+    border-radius: .25rem;
+    font-size: 14px;
+    color: #666;
+    box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
+}
+
+.container .content .para1{
+  font-family: myfont,'Courier New', Courier, monospace;
+  font-size: 40px;
+  position: absolute;
+  top:2%;
+  left:10%;
+  z-index: 999;
+}
+.container .content .para2{
+  font-family: myfont,'Courier New', Courier, monospace;
+  font-size: 40px;
+  position: absolute;
+  top:25%;
+  left:10%;
+}
+
+#panel{
+  position:absolute;
+  right:17%;
+  top:30%;
+  width: 300px;
+  height: 510px;
+  overflow: scroll;
+}
+
+
+#part1{
+  position: absolute;
+  background-repeat: no-repeat;
+  top:3%;
+  left:15%;
+  height:700px; 
+  width: 70%;
+}
+#part2{
+  position: absolute;
+  background-repeat: no-repeat;
+  top:5%;
+  left:1%;
+  height:100%; 
+  width: 100%;
+  
+}
+
+.btn_pos{
+  position: absolute;
+  left:5px;
+  top:13px;
+  font-family: Myfont,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:rgb(0, 0, 0);
+}
+.div_btn1{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 20%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn2{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 25%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn3{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 30%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn4{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 35%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn5{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 40%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn6{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 45%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn7{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 50%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn8{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 55%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+.div_btn9{
+  border-radius: 100px;
+  background-color: rgb(124, 221, 245);
+  left: 60%;
+  top: 48%;
+  position: absolute;
+  width: 60px;
+  height: 10px;
+}
+
+.div_btn:hover{
+  background-color:aqua;
+}
+
+
+#guajian1{
+  background-image: url(../pic/lvyouluxian/guajian1.jpg);
+  background-size: 300px 300px;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  left:10%;
+}
+
+#guajian2{
+  background-image: url(../pic/lvyouluxian/guajian2.jpg);
+  background-size: 450px 200px;
+  height: 200px;
+  width: 450px;
+  position: absolute;
+  right:10%;
+}
+#guajian3{
+  background-image: url(../pic/lvyouluxian/guajian4.jpg);
+  background-size: 150px 250px;
+  height: 250px;
+  width: 150px;
+  position: absolute;
+  top:28.5%;
+  right:20%;
+}
+#panel{
+  z-index: 999;
+}

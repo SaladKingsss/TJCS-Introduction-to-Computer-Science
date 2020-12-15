@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wukanglu-style.css') }}">
+    <title>武康路</title>
+    <script language=JavaScript1.2>
+        var currentpos=0,alt=1,curpos1=0,curpos2=-1
+        function initialize(){
+            startit()
+        }
+        function scrollwindow(speed){
+                if (document.all)
+                    temp=document.body.scrollTop
+                else
+                    temp=window.pageYOffset
+                if (alt==0)
+                    alt=1
+                else
+                    alt=0
+                if (alt==0)
+                    curpos1=temp
+                else
+                    curpos2=temp
+                if (curpos1!=curpos2){
+                    if (document.all)
+                        currentpos=document.body.scrollTop+speed
+                    else
+                        currentpos=window.pageYOffset+speed
+                    window.scroll(0,currentpos)
+                }
+        }
+        function startit(){
+            let a = setInterval("scrollwindow(1)",10)
+            window.onmousewheel = function(){
+                clearInterval(a);
+            }
+        }
+        window.οnlοad=initialize();
+</script>
+
+</head>
+<body>
+    <!-- container -->
+    <div class="container">
+        <!-- 在这里开始复制 -->
+        <div class="header">
+            <!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+            <div id="top-nav">
+                <ul>
+                    <li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+                    <li class="top1"><a href="history.html">景点
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                    <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                    <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                    <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                    <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                    <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                    <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                    <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+                                </ul>
+                        </div>
+                        </a></li>
+                    <li><a href="accomdation.html">交通路线
+                    </a></li>
+                        
+                    <li><a href="food.html">热门活动
+                    </a></li>
+                    <li><a href="#news" class="scroll">景区公告
+                    </a></li>
+                    <li><a href="contact.html">联系我们
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 在这里复制结束 -->
+        </div>
+    <div class = "info1"> 
+        <div class = "board_wk1">
+            <img src = "{{ url_for('static', filename='pic/wukanglu/board_wk.jpeg') }}" alt = "武康路" class = "board_wk"/>
+        </div>
+        <div  id = "font_wk">
+            <h3>上海这座城市，将自己的辉煌灿烂交付于外滩和陆家嘴，而把自己的温柔细腻全部隐藏在庭院深深的洋房和弄堂之中。而武康路就是这样一段永不褪色的上海梦。这条路安静、雅致，带着一点岁月熏染出来的沧桑。 武康路的优雅不仅仅是路上的法国梧桐和一幢幢临街的欧式建筑，而是一种蚀骨的、内在的风情，那是被时间炖出来的，需要慢慢去品。</h3>            
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">1. 武康大楼</h1>
+        <div class = "board_wk1">
+            <img src="{{ url_for('static', filename='pic/wukanglu/wk_build.jpeg') }}" class = "board_wk"/>
+        </div>
+        <div  id = "font_wk" style = "font-size:20px;">
+            <h3>远观武康大楼，犹如一艘缓缓驶入上海滩的巨轮，它的三角形造型楼体停驻在不规则的交叉路口。公寓楼高9层，底层的拱门犹如罗马斗兽场般，栅栏阳台被誉为罗密欧阳台，还有红砖，这一切元素都构成了这座大楼让人心醉的缘由。</h3>
+            <h3>这里曾是多位文化名人的居所，如著名电影表演艺术家秦怡、赵丹、吴茵、王人美、孙道临和王文娟夫妇等都曾在此居住。现在这座公寓里除了老住户，也有一些年轻的白领，或是对于老上海情节情有独钟的人入住。</h3>
+            <h3>此外，这里更是文艺青年街拍的圣地。这里也被称之为武康大楼的标志。如果你对建筑感兴趣的话，那这里你一定要来哦。</h3>                    
+            </h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_1">2. 徐汇老房子艺术中心</h1>
+        <div class = "main_div">
+            <div class = "arrows">
+                <span title="1" class="arrow"><</span>
+                <span title="0" class="arrow" style="float: right">></span>
+            </div>
+    
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/wukanglu/wk_build2_1.jpeg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/wukanglu/wk_build2_2.jpeg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/wukanglu/wk_build2_3.jpeg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/wukanglu/wk_build2_4.jpeg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/wukanglu-main.js') }}"></script>
+        <div  id = "para_21">
+            <h3>经过武康大楼，沿着武康路往北散步，在泰安路路口附近，就会见到「老房子艺术中心」 这栋建筑建于上世纪三十年代，是当年许多教育出版界人士聚会的地方。后来在1932年由蔡元培、吴稚晖在此创办上海国际图书馆（中国第一家国际图书馆，后于1937年迁往北京）。</h3>
+            <h3>这里只有两个楼面开放，定期会有画展摄影展。一楼有上海老房子模型的展示。二楼的墙壁挂着徐汇区部分老房子的摄影照片。</h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <h1 id = "title_1_1">3. 巴金故居</h1>
+        <div class = "board_wk1_31">
+            <img src = "{{ url_for('static', filename='pic/wukanglu/wk_build3_1.jpeg') }}" class = "board_wk"/>
+        </div>
+        <div class = "board_wk1_32">
+            <img src = "{{ url_for('static', filename='pic/wukanglu/wk_build3_2.jpeg') }}" class = "board_wk"/>
+        </div>
+        <div>
+            <h3 id = "para_31">
+                接着往前走，快走到湖南路的时候会来到巴金故居。这栋洋楼建于1923年，由一栋主楼、两栋小辅楼和一个花园组成。这里曾经是苏联商务代表处，巴金则是在1955年入住，居住时间长达40年。
+            </h3>
+            <h3 id = "para_32">
+                据说当年刚刚搬来时，巴金的夫人萧珊曾觉得房间里光线暗，而巴金偏爱院里几棵广玉兰，便住了下来。如今故人已逝，玉兰树却依然高大茂盛，开花时节，庭院里一片清芬。
+            </h3>
+        </div>        
+    </div>
+    <div class = "info1"> 
+        <h1 id = "title_1_2">4. FARINE法香餐饮管理</h1>
+        <div class = "board_wk1_41">
+            <img src = "{{ url_for('static', filename='pic/wukanglu/wk_build4_1.jpeg') }}" class = "board_wk_2"/>
+        </div>
+        <div class = "board_wk1_32">
+            <img src = "{{ url_for('static', filename='pic/wukanglu/wk_build4_2.jpeg') }}" class = "board_wk_2"/>
+        </div>
+        <div  id = "para_41">
+            <h3>法国老板Franck来到中国前的20年里，几乎游历了全世界。他觉得上海这座城市赋予了他灵感，所以决心要在这里开始自己新的生活和事业。
+                2007年，他在武康路开了一家后来被人们称为上海最好的法餐Franck Bistro，然后更是一步一步走到了今天的Farine。</h3>
+        </div>        
+        <div  id = "para_32"> <!-- 这里使用的是第三段左边的格式 -->
+            <h3>羊角面包是店里的招牌，外焦里嫩，外面的酥皮一碰就能掉下来一层。</h3>
+        </div>        
+    </div>
+    <div class = "info2"> 
+        <div class = "board_wk1">
+            <img src = "{{ url_for('static', filename='pic/wukanglu/wk_build5_2.jpeg') }}" class = "board_wk"/>
+        </div>
+        <div  id = "font_wk">
+            <h3>如今，这条穿越上海百年历史，短短的小路愈加风情万种，聚集了无数高颜值的洋气小店，刷爆朋友圈的诸多店铺很多来源于此，还不抽出时间去好好逛一下！</h3>
+        </div>        
+        <div id = "font_wk">
+            <a id="next_s" href="../外滩-外白渡桥-东方明珠/index.html">开启下一站之旅吧！</a>
+        </div>        
+        
+    </div>
+    {% block content %}
+    <div class="con-top con-font1"> 
+        <h3>评论区————快来分享自己的旅游经历吧</h3>
+    </div>
+    <div class="guajian1">        
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            {% if posts %}
+            {% for post in posts %}
+            <div class="content con-font">
+                <h3 class="text-primary"><a href="{{ url_for('blog.show_post', post_id=post.id) }}">{{ post.title }}</a>
+                </h3>
+                <p>
+                    {{ post.body|striptags|truncate }}
+                    <small><a href="{{ url_for('blog.show_post', post_id=post.id) }}">Read More</a></small>
+                </p>
+                <small class="con-font">
+                    评论: <a href="{{ url_for('blog.show_post', post_id=post.id) }}#comments">{{
+                        post.comments|length }}</a>&nbsp;&nbsp;
+                    分类: <a href="{{ url_for('blog.show_category', category_id=post.category.id) }}">{{
+                        post.category.name }}</a>
+                    <span class="float-right">{{ moment(post.timestamp).format('LL') }}</span>
+                </small>
+                {% if not loop.last %}
+                <hr id="line">
+                {% endif %}
+            </div>
+                {% endfor %}
+                {% else %}
+                <div class="tip">
+                    <h5>No posts yet.</h5>
+                    {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('admin.new_post') }}">Write Now</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+        </div>
+    </div>
+    <div class="con-bottom con-font1"> 
+        <h3>评论结束了哦</h3>
+    </div>
+    {% endblock %}
+</body>
+</html>

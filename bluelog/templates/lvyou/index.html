@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index-reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index-style.css') }}">
+	<title>一站式旅游</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="logo">
+				<a href="{{ url_for('.index') }}">一站式旅游</a>
+			</div>
+			<div class="logo">
+				<div class="login_regist">
+					<div class="login-style">
+					<a href="{{ url_for('auth.login') }}" class="login">登录</a>
+					</div>
+					<div class="regist-style">
+						<a href="{{ url_for('auth.register') }}" class="regist">注册</a>
+					</div>
+				</div>
+				
+			</div>
+			<div id="top-nav">
+				<ul>
+					<li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+					<li class="top1"><a href="history.html">景点
+							<div class="submenu">
+								<ul>
+									<li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+									<li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+									<li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+									<li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+									<li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+									<li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+									<li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+									<li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+								</ul>
+						</div>
+						</a></li>
+					<li><a href="{{ url_for('.lvyouluxian') }}">旅游路线
+					</a></li>
+						
+					<li><a href="food.html">热门活动
+						<div class="submenu1">
+							<ul>
+								<li><a href="">活动1</a></li>
+								<li><a href="">活动2</a></li>
+								<li><a href="">活动3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="#news" class="scroll">景区公告
+						<div class="submenu1">
+							<ul>
+								<li><a href="">公告1</a></li>
+								<li><a href="">公告2</a></li>
+								<li><a href="">公告3</a></li>
+							</ul>
+						</div>
+					</a></li>
+					<li><a href="contact.html">联系我们
+						<div class="submenu1">
+							<ul>
+								<li><a href="">方式1</a></li>
+								<li><a href="">方式2</a></li>
+								<li><a href="">方式3</a></li>
+							</ul>
+						</div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="button1">
+			<button type = "button" class = "button1_1">
+				跟我来！
+			</button>
+		</div>
+		<div id="button2">
+			<button type = "button" class = "button2_1">
+				<a href="{{ url_for('.wukanglu') }}">
+					开启旅行吧！
+				</a>
+			</button>
+		</div>
+		<div id="button3">
+			<button type = "button" class = "button3_1">
+				٩( ๑╹ ꇴ╹)۶ 花絮ヽ(✿ﾟ▽ﾟ)ノ
+			</button>
+		</div>
+		<div id="button4">
+			<button type = "button" class = "button4_1">
+				我要上去
+			</button>
+		</div>
+
+		<div class="body1">
+				<div class = "main_div">
+					<div class = "arrows">
+						<span title="1" class="arrow"><</span>
+						<span title="0" class="arrow" style="float: right;">></span>
+					</div>
+					<ul class="ul_img">
+						<li class="li_img1"><img src="{{ url_for('static', filename='pic/index/background1.jpg') }}">
+							<h3 class="intro">上海有着热闹的现代化街道，也有着安静的复古老街。现代化街道充满创新与活力，想象与朝气；老街远离车水马龙，古朴而又宁静。让我们一起开启上海的街道之旅，发现街道，探索街道，感悟街道吧！</h3>
+						</li>
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background3.jpeg') }}">
+							<h3 class="intro1">第一站：武康路<br>上海这座城市，将自己的辉煌灿烂交付于外滩和陆家嘴，而把自己的温柔细腻全部隐藏在庭院深深的洋房和弄堂之中。而武康路就是这样一段永不褪色的上海梦。</h3>
+						</li>
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background4.jpg') }}">
+							<h3 class="intro2">第二站：外滩街景<br>外滩是上海市中心的一个区域，由一段沿黄浦江的马路和沿路的建筑和设施构成，为上海重要的地标之一。外白渡桥是中国的第一座全钢结构铆接桥梁和仅存的不等高桁架结构桥，同时也是自1856年以来在苏州河河口附近同样位置落成的第四座桥梁。	东方明珠广播电视塔，位于上海市浦东陆家嘴的未来主义建筑，与外滩隔黄浦江相望。</h3>
+						</li>
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background5.jpeg') }}">
+							<h3 class="intro3">第三站：南京路<br>上旧有“十里洋场”之称的南京路是是上海市最著名的商业街，同时也是最富盛名的旅游景点之一。东起外滩，西至静安寺与延安西路交汇，全长5.5公里，两侧云集约600多家商店。来这里购物、品尝美食、旅游的人群熙熙攘攘，络绎不绝。</h3>
+						</li>
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background6.jpeg') }}">
+							<h3 class="intro3">第四站：老弄堂<br>田子坊是里弄民居味道，弄堂里除了创意店铺和画廊、摄影展，最多的就是各种各样的咖啡馆。在闲散的下午，就着弄堂里的习习凉风，明媚的阳光铺在地上，空中满是慵懒的咖啡香味，真个是大有“偷得浮生半日闲”的意境。</h3>
+						</li>						
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background7.jpeg') }}">
+							<h3 class="intro3">第五站：城隍庙<br>上海城隍庙是上海标志景点之一，有句话说：来上海不到城隍庙就不算来过上海。城隍庙旁边就是上海老街和豫园。老城隍庙还有长开不散的大庙会，在别的庙会里想找的东西这里应有尽有，最有名的是城隍庙小吃和手工艺品</h3>
+						</li>						
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background6.jpeg') }}">
+							<h3 class="intro2">第六站：M50创意园<br>M50创意园是一个小清新的旅游地。有时候，你也能够看到一些比较不错的创意画面，或者是装饰设计，这样的地方，就是适合陶冶情操。</h3>
+						</li>
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background9.jpeg') }}">
+							<h3 class="intro3">第七站：大学路<br>上海大学路长约700米，起于智星路，止于锦建路，一头连着复旦大学、上海财经大学，另一头连着创智天地广场和江湾体育场，是一条不长的小马路。大学路流露出浓浓的时尚异国风情的林荫道，已经成为具有丰富业态、兼具人文气息 ，一份别样的惬意与清新的休闲场所。</h3>
+						</li>
+						<li class="li_img"><img src="{{ url_for('static', filename='pic/index/background9.jpeg') }}">
+							<h3 class="intro2">第八站：甜爱路<br>干净整洁，清新脱俗，很多人只知道上海的繁华，上海的高楼大厦，上海的金融中心，但很少人知道她还有这么温情的一面。据说这条路长520米，不知真假，或许，这是每一个憧憬浪漫爱情的人，对甜爱路的心理测算距离吧。</h3>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="div_btn div_btn1"></div>
+					<div class="div_btn div_btn2"><p class="btn_pos">武康路</p></div>
+					<div class="div_btn div_btn3"><p class="btn_pos">外滩街景</p></div>
+					<div class="div_btn div_btn4"><p class="btn_pos">南京路</p></div>
+					<div class="div_btn div_btn5"><p class="btn_pos">老弄堂</p></div>
+					<div class="div_btn div_btn6"><p class="btn_pos">城隍庙</p></div>
+					<div class="div_btn div_btn7"><p class="btn_pos">M50创意园</p></div>
+					<div class="div_btn div_btn8"><p class="btn_pos">大学路</p></div>
+					<div class="div_btn div_btn9"><p class="btn_pos">甜爱路</p></div>
+				</div>
+
+		</div>
+				<script type="text/javascript" src="{{ url_for('static', filename='js/index-main.js') }}">
+				</script>			
+	<li class="li_img2"><img src="{{ url_for('static', filename='pic/index/background2.jpeg') }}"></li>
+	</div>
+	<script async>
+		document.body.parentNode.style.overflow = "hidden";		
+		let top_nav = document.getElementById("top-nav");
+		console.log(top_nav);
+		let button1 = document.querySelectorAll("button")[0];
+		let button2 = document.querySelectorAll("button")[1];
+		let button3 = document.querySelectorAll("button")[2];
+
+		let height = window.innerHeight;
+		let Width = window.innerWidth;
+		console.log(height);
+		console.log(Width);
+
+		console.log(button1);
+		let ad = 0;
+		let pos = height*0.18;//153
+		console.log("pos="+pos);
+		let k = 0.1;
+		let is_f = 0;
+		button1.onclick = function(){
+			is_f = 1;
+			top_nav.style.position="fixed";
+			top_nav.style.minWidth="1200px";
+			top_nav.style.top = "0px";
+			top_nav.style.zIndex = "9999";
+
+			button1.style.backgroundColor = "rgba(102, 139,202, 0)";
+			button1.style.borderColor = "rgba(53,126,189,0)";
+			button1.style.color = "rgba(255,255,255,0)";
+
+			button2.style.backgroundColor = "rgba(102, 139,202, 1)";
+			button2.style.borderColor = "rgba(53,126,189,1)";
+			button2.style.color = "rgba(255,255,255,1)";
+
+			button3.style.backgroundColor = "rgba(102, 139,202, 1)";
+			button3.style.borderColor = "rgba(53,126,189,1)";
+			button3.style.color = "rgba(255,255,255,1)";
+
+			timer = setInterval(function(){
+				window.onbeforeunload = function(){
+					alert("hi")
+					clearInterval(timer);
+					return;
+				};
+					scrollTo(0,ad);
+					ad=ad+1+k;
+					if(ad < pos/2)
+						k+=0.03;
+					else
+						k-=0.03;
+					console.log(ad);
+					if(ad>=pos)
+					{					
+						clearInterval(timer);
+						ad = height*0.18;
+						pos = height*1.22;//153
+						k = 0.03;
+					}
+			},0)
+			
+		};
+		// let body = document.querySelector(".body1");
+		// body.height = window.innerHeight;
+		// body.scrollWidth = window.innerWidth;		
+		// console.log(body.height);
+		// console.log(body.scrollWidth);
+	</script>
+	<script async>
+		button3.onclick = function(){
+			button4.style.backgroundColor = "rgba(102, 139,202, 1)";
+			button4.style.borderColor = "rgba(53,126,189,1)";
+			button4.style.color = "rgba(255,255,255,1)";
+			timer = setInterval(function(){
+				window.onbeforeunload = function(){
+					clearInterval(timer);
+				};
+					scrollTo(0,ad);
+					ad=ad+1+k;
+					if(ad < pos/2)
+						k+=0.03;
+					else
+						k-=0.02;
+					console.log(ad);
+					if(ad>=pos)
+					{					
+						clearInterval(timer);
+						ad = height*1.22;
+						pos = height*0.18;
+						k = 0.03;
+					}
+			},0)
+		};		
+	</script>
+	<script async>
+		button4.onclick = function(){
+			button2.style.backgroundColor = "rgba(102, 139,202, 1)";
+			button2.style.borderColor = "rgba(53,126,189,1)";
+			button2.style.color = "rgba(255,255,255,1)";
+
+			button3.style.backgroundColor = "rgba(102, 139,202, 1)";
+			button3.style.borderColor = "rgba(53,126,189,1)";
+			button3.style.color = "rgba(255,255,255,1)";
+
+			button4.style.backgroundColor = "rgba(102, 139,202, 0)";
+			button4.style.borderColor = "rgba(53,126,189,0)";
+			button4.style.color = "rgba(255,255,255,0)";
+			timer = setInterval(function(){
+				window.onbeforeunload = function(){
+					clearInterval(timer);
+				};
+				scrollTo(0,ad);
+				ad=ad-1-k;
+				if(ad > pos/2)
+					k+=0.03;
+				else
+					k-=0.02;
+				console.log(ad);
+				if(ad<=pos)
+				{					
+					clearInterval(timer);
+					ad = height*0.18;
+					pos = height*1.22;//153
+					k = 0.03;
+				}
+			},0)
+		};		
+	</script>
+</body>
+
+</html>

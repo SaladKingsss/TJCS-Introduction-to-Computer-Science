@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>地图展示</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lvyouluxian-style.css') }}">    
+    <script src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=Iy38Y8Fbdf1C5jNBDzv6H9K178Y52waH"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Iy38Y8Fbdf1C5jNBDzv6H9K178Y52waH">
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div id = "layer1">
+    </div>
+    <div class="header">
+        <!-- <div class="logo">
+            <a href="index.html">一站式旅游</a>
+        </div> -->
+        <!-- <div class="logo">
+            <div class="login_regist">
+                <a href="javascript:login();" class="login">你好,请登录</a></a>
+                &nbsp;&nbsp;
+                <a href="javascript:regist();" class="regist">免费注册</a>
+            </div>
+            
+        </div> -->
+        <div id="top-nav">
+            <ul>
+                <li><a href="index.html" class="active">首页</a></li>
+                <li class="top1"><a href="history.html">景点
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>                            </ul>
+                    </div>
+                    </a></li>
+                <li><a href="accomdation.html">交通路线
+                </a></li>
+                    
+                <li><a href="food.html">热门活动
+                </a></li>
+                <li><a href="#news" class="scroll">景区公告
+                </a></li>
+                <li><a href="contact.html">联系我们
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="para1">
+            <p>客官，先看看您要旅游的目的地都在哪吧。</p>
+        </div>
+        <div id="part1">
+        <div class="info">最新版GL地图命名空间为BMapGL, 可按住鼠标右键控制地图旋转、修改倾斜角度。点击图标会显示详细地址</div>
+        <div id="container1"></div>    
+        </div>
+        <div id="part2">
+            <div id="container2"></div>    
+        <div id="panel"></div>
+        <div class="para2">
+            <p>我们为您定制了旅游路线 (๑•̀ㅂ•́)و✧</p>
+        </div>
+        <div>
+            <div class="div_btn div_btn1"><p class="btn_pos">武康路-外滩街景</p></div>
+            <div class="div_btn div_btn2"><p class="btn_pos">外滩街景-南京路</p></div>
+            <div class="div_btn div_btn3"><p class="btn_pos">南京路-老弄堂</p></div>
+            <div class="div_btn div_btn4"><p class="btn_pos">老弄堂-城隍庙</p></div>
+            <div class="div_btn div_btn5"><p class="btn_pos">城隍庙-M50创意园</p></div>
+            <div class="div_btn div_btn6"><p class="btn_pos">M50创意园-大学路</p></div>
+            <div class="div_btn div_btn7"><p class="btn_pos">大学路-甜爱路</p></div>
+        </div>
+        </div>    
+        <div id="guajian1"></div>
+        <div id="guajian2"></div>
+        <div id="guajian3"></div>
+    
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript"  src="{{ url_for('static', filename='js/lvyouluxian-main.js') }}" ></script>
+

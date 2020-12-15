@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/waitan-style.css') }}">
+    <title>外滩</title>
+    <script language=JavaScript1.2>
+        var currentpos = 0,
+            alt = 1,
+            curpos1 = 0,
+            curpos2 = -1
+
+        function initialize() {
+            startit()
+        }
+
+        function scrollwindow(speed) {
+            if (document.all)
+                temp = document.body.scrollTop
+            else
+                temp = window.pageYOffset
+            if (alt == 0)
+                alt = 1
+            else
+                alt = 0
+            if (alt == 0)
+                curpos1 = temp
+            else
+                curpos2 = temp
+            if (curpos1 != curpos2) {
+                if (document.all)
+                    currentpos = document.body.scrollTop + speed
+                else
+                    currentpos = window.pageYOffset + speed
+                window.scroll(0, currentpos)
+            }
+        }
+
+        function startit() {
+            let a = setInterval("scrollwindow(1)", 10)
+            window.onmousewheel = function () {
+                clearInterval(a);
+            }
+        }
+        window.οnlοad = initialize();
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 在这里开始复制 -->
+        <div class="header">
+            <!-- <div class="logo">
+                <a href="index.html">一站式旅游</a>
+            </div> -->
+            <!-- <div class="logo">
+                <div class="login_regist">
+                    <a href="javascript:login();" class="login">你好,请登录</a></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:regist();" class="regist">免费注册</a>
+                </div>
+                
+            </div> -->
+            <div id="top-nav">
+                <ul>
+                    <li><a href="{{ url_for('.index') }}" class="active">首页</a></li>
+                    <li class="top1"><a href="history.html">景点
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="{{ url_for('.wukanglu') }}">武康路</a></li>
+                                    <li style="font-size: smaller;"><a href="{{ url_for('.waitan') }}">外滩街景</a></li>
+                                    <li><a href="{{ url_for('.nanjinglu') }}">南京路</a></li>
+                                    <li><a href="{{ url_for('.laonongtang') }}">老弄堂</a></li>
+                                    <li><a href="{{ url_for('.chenghuangmiao') }}">城隍庙</a></li>
+                                    <li style="font-size:10px;"><a href="{{ url_for('.chuangyiyuan') }}">M50创意园</a></li>
+                                    <li><a href="{{ url_for('.daxuelu') }}">大学路</a></li>
+                                    <li><a href="{{ url_for('.tianailu') }}">甜爱路</a></li>
+                                </ul>
+                            </div>
+                        </a></li>
+                    <li><a href="accomdation.html">交通路线
+                        </a></li>
+
+                    <li><a href="food.html">热门活动
+                        </a></li>
+                    <li><a href="#news" class="scroll">景区公告
+                        </a></li>
+                    <li><a href="contact.html">联系我们
+                        </a></li>
+                </ul>
+                
+            </div>
+        </div>
+        <!-- 在这里复制结束 -->
+    </div>
+    <div class="info1">
+        <div class="tg_temple1">
+            <img src="{{ url_for('static', filename='pic/waitan/001.jpg') }}" alt="城隍庙" class="tg_temple" />
+        </div>
+        <div id="font_wk">
+            <h3>外滩是上海市中心的一个区域，由一段沿黄浦江的马路和沿路的建筑和设施构成，为上海重要的地标之一。全长1.5公里，南起延安东路，北至苏州河上的外白渡桥，东面即黄浦江，西面是旧上海金融、外贸机构的集中地。</h3>
+            <h3>外滩沿路坐拥二十多幢风格各异的历史建筑，有折衷主义的，也有文艺复兴式的，还有早期现代式的，故而被誉为“万国建筑博览群”。自上海开埠后，外滩就开始成为了上海乃至中国的金融及贸易中心，也被称为“东方华尔街”。
+            </h3>
+        </div>
+    </div>
+    <div class="info2">
+        <h1 id="title_1_1">1. 外白渡桥</h1>
+        <div class="tg_temple1">
+            <img src="{{ url_for('static', filename='pic/waitan/002.jpg') }}" class="tg_temple" />
+        </div>
+        <div id="font_wk" style="font-size:20px;">
+            <h3>外白渡桥是中国的第一座全钢结构铆接桥梁和仅存的不等高桁架结构桥，同时也是自1856年以来在苏州河河口附近同样位置落成的第四座桥梁。</h3>
+            <h3>由于外白渡桥处于苏州河与黄浦江的交界处，因此成为连接黄浦与虹口的重要交通要道。现在的外白渡桥于1908年1月20日落成通车。由于其丰富的历史和独特的设计，外白渡桥成为上海的标志之一，同时也是上海的现代化和工业化的象征。1994年2月15日，上海市人民政府将外白渡桥列为优秀历史保护建筑之一。自1908年落成后，外白渡桥便是成为上海天际线的组成部分。
+            </h3>
+
+        </div>
+    </div>
+    <div class="info1">
+        <h1 id="title_1_1">2. 东方明珠</h1>
+        <div class="main_div">
+            <div class="arrows">
+                <span title="1" class="arrow">
+                    </span>
+                        <span title="0" class="arrow" style="float: right">></span>
+            </div>
+
+            <ul class="ul_img">
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/waitan/031.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/waitan/032.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/waitan/033.jpg') }}"></li>
+                <li class="li_img"><img src="{{ url_for('static', filename='pic/waitan/034.jpg') }}"></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/waitan-main.js') }}"></script>
+        <div id="para_21">
+            <h3>东方明珠由当时华东建筑设计研究院设计，1991年7月30日动工，1994年11月18日落成，总高468米。在1994年至2007年间，是中国大陆地区的最高建筑，2007年被上海环球金融中心超越。东方明珠自落成以后便成为上海天际线的组成部分之一，是上海的地标性建筑，同时也是中国国家5A级旅游景区。
+            </h3>
+        </div>
+    </div>
+    <div class="info2">
+        <h1 id="title_1_1">3. 万国建筑博览群</h1>
+        <div class="tg_temple1_31">
+            <img src="{{ url_for('static', filename='pic/waitan/041.jpg') }}" class="tg_temple" />
+        </div>
+        <div class="tg_temple1_32">
+            <img src="{{ url_for('static', filename='pic/waitan/042.jpg') }}" class="tg_temple" />
+        </div>
+        <div>
+            <h3 id="para_31">
+                主要是指上海外滩北起外白渡桥，南抵金陵东路，这一段是外滩建筑群的精华所在。
+                在这段1.5公里长的外滩西侧，鳞次栉比地矗立着海关大楼、和平饭店南楼北楼、原汇丰银行大楼等52幢各种风格的大厦。
+
+            </h3>
+            <h3 id="para_32">
+                这些大厦虽然出自不同建筑师之手，风格迥异，但是建筑格调统一，建筑轮廓协调。
+                万国博览建筑群在黄浦江西岸划出了一道优美的天际线，享有“万国建筑博览会”的盛名。
+            </h3>
+        </div>
+    </div>
+    <div class="info1">
+        <h1 id="title_1_2">4. 黄浦江</h1>
+        <div class="tg_temple1_41">
+            <img src="{{ url_for('static', filename='pic/waitan/051.jpg') }}" class="tg_temple_2" />
+        </div>
+        <div class="tg_temple1_32">
+            <img src="{{ url_for('static', filename='pic/waitan/052.jpg') }}" class="tg_temple_2" />
+        </div>
+        <div id="para_41">
+            <h3>黄浦江是上海的地标河流，将上海分成浦西和浦东，两岸荟萃了上海城市景观的精华，被称为上海的母亲河。
+                全长约113公里，杨浦大桥和南浦大桥横跨黄浦江，形成了一道靓丽的风景线。
+                可乘坐浦江游船游览黄浦江，沿岸的上海国际会议中心、东方明珠等景点都一览无遗。 </h3>
+        </div>
+        <div id="para_32">
+            <!-- 这里使用的是第三段左边的格式 -->
+            <h3>黄浦江的夜景也十分震撼，两岸灯火辉煌，繁华城市的古典与现代建筑风格，交相辉映，尽显江岸美景。</h3>
+        </div>
+    </div>
+    <div class="info2">
+        <div class="tg_temple1">
+            <img src="{{ url_for('static', filename='pic/waitan/101.jpg') }}" class="tg_temple" />
+        </div>
+        <div id="font_wk">
+            <h3>外滩是上海租界区，也是整个上海近代城市开发的起点。在1843年以前，这里还是黄浦江边的一片泥滩——“黄浦滩”。
+                1943年8月，外滩随交还上海公共租界于汪精卫政权，外滩也随著上海结束了长达百年的租界时期。
+                如今，崭新的外滩已经展现在我们眼前。</h3>
+        </div>
+        <div id="font_wk">
+            <a id="next_s" href="{{ url_for('.nanjinglu') }}">开启下一站之旅吧！</a>
+        </div>
+
+    </div>
+    <script>
+        let top1 = document.querySelector(".nav1");
+        let top_block1 = document.querySelector(".top_block1");
+        let top_block2 = document.querySelector(".top_block2");
+        let top_block3 = document.querySelector(".top_block3");
+        let top_block4 = document.querySelector(".top_block4");
+        let top_block5 = document.querySelector(".top_block5");
+        let top_block6 = document.querySelector(".top_block6");
+        top_block1.onmouseover = function () {
+            let block = document.createElement("div");
+            block.setAttribute("class", "top1_style");
+            top_block1.appendChild(block);
+            timer = setInterval(function () {
+                block.style.height = "300px";
+            }, 0)
+            top_block1.onmouseout = function () {
+                top_block1.removeChild(block);
+            }
+        };
+    </script>
+
+</body>
+
+</html>
